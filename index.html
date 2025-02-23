@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a class="item" href="#">Home</a></li>
+          <li><a class="item" href="#">About</a></li>
+          <li>
+            <div class="item">
+              <button
+                class="dropdown-btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                Skills ▼
+              </button>
+              <ul class="dropdown">
+                <li><a href="#" tabindex="0">React</a></li>
+                <li><a href="#" tabindex="0">Angular</a></li>
+                <li><a href="#" tabindex="0">Vue</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="item" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <div class="cards-container"></div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>

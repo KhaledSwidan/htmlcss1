@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --gradient: linear-gradient(45deg, #ff7c7d, #ffda67);
+        --card: #272524;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        height: 100vh;
+        background: var(--gradient);
+        color: #fdfcfd;
+        font-family: 'Euclid Circular A', 'Poppins';
+      }
+
+      .card {
+        display: flex;
+        align-items: center;
+        width: 75vw;
+        max-width: 650px;
+        padding: 44px 30px 44px 20px;
+        background: var(--card);
+        border-radius: 24px;
+      }
+
+      .card img {
+        max-width: 280px;
+        width: 36vw;
+        height: 300px;
+        object-fit: cover;
+        margin-left: -60px;
+        margin-right: 30px;
+        border-radius: inherit;
+        box-shadow: 0 60px 40px rgb(0 0 0 / 8%);
+        transition: border-radius 0.3s;
+      }
+
+      .card h2 {
+        font-size: 22px;
+        font-weight: 400;
+        margin-top: 0;
+        margin-right: 30px;
+        margin-bottom: 10px;
+      }
+
+      .card h3 {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+        opacity: 0.75;
+      }
+
+      .card p {
+        font-size: 13px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        opacity: 0.5;
+      }
+
+      .socials {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .socials > button {
+        position: relative;
+        border: 0;
+        background: transparent;
+        color: #f8f8f8;
+        padding: 0;
+      }
+
+      .socials > button:first-child::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        width: 52px;
+        height: 52px;
+        translate: -50% -50%;
+        border-radius: 50%;
+        background: var(--gradient);
+        transition: 0.3s;
+        transform: translateY(0);
+      }
+
+      .socials > button > i {
+        position: relative;
+        z-index: 1;
+        border: 4px solid var(--card);
+        background: #3f3b39;
+        display: grid;
+        place-items: center;
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+        border-radius: 40px;
+      }
+
+      @media (width <= 600px) {
+        .card {
+          margin: 0 40px;
+          padding-left: 50px;
+          padding-right: 50px;
+          padding-bottom: 60px;
+          width: 100%;
+          text-align: center;
+          flex-direction: column;
+        }
+
+        .card h2 {
+          margin-right: 0;
+          font-size: 26px;
+        }
+
+        .card img {
+          margin: -100px 0 30px 0;
+          width: 100%;
+          max-width: 1000px;
+          height: 250px;
+        }
+
+        .card p {
+          max-width: 360px;
+        }
+
+        .socials {
+          justify-content: center;
+        }
+      }
+
+      @media (width <= 440px) {
+        .card img {
+          height: 50vw;
+          width: 50vw;
+          border-radius: 50%;
+          border: 12px solid var(--card);
+          box-shadow: none;
+          margin: -140px 0 30px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+        <img src="image.jpg" />
+        <div>
+          <h2>Jill Scott</h2>
+          <h3>Frontend Engineer</h3>
+          <p>
+            Transforming ideas into realities, creating interfaces that inspire
+            and engage users dreams.
+          </p>
+          <div class="socials">
+            <button>
+              <i class="fa-brands fa-dribbble"></i>
+            </button>
+            <button>
+              <i class="fa-brands fa-pinterest"></i>
+            </button>
+            <button>
+              <i class="fa-brands fa-codepen"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

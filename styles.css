@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --color-primary: #4f67f6;
+  --color-secondary: #27387f;
+  --color-bg: #28284e;
+  --color-text: #fefcff;
+  --gradient: linear-gradient(45deg, #01ebaf, #00a9cd, #6380ff);
+  --card: #272524;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text);
+  background: var(--gradient);
+}
+
+/* ✅ تحسين تباعد الأقسام */
+section {
+  margin: 35px auto;
+  max-width: 1200px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* ✅ تحسين تصميم الناف بار */
+nav {
+  background: rgba(39, 42, 51, 0.9);
+  display: flex;
+  border-radius: 5px;
+  padding: 0;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+}
+li {
+  width: 100%;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+nav li button.dropdown-btn {
+  background: transparent;
+  border: none;
+}
+nav .item,
+nav li button.dropdown-btn {
+  font-size: 1.1rem;
+  padding: 0px 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  display: inline-block;
+  width: max-content;
+}
+nav li:hover {
+  background-color: rgba(83, 98, 176, 0.8);
+  border-radius: 5px;
+}
+
+/* ✅ تحسين شكل القوائم المنسدلة */
+.dropdown {
+  position: absolute;
+  width: 50%;
+  transform: translate(-40%, 8%);
+  background: rgba(39, 42, 51);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item:hover .dropdown,
+.dropdown-btn[aria-expanded='true'] + .dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.dropdown li:hover {
+  background: rgb(83, 98, 176);
+}
+
+/* ✅ تحسين الشبكة لعرض الكروت */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ✅ تحسين تصميم الكارت */
+.card {
+  display: flex;
+  align-items: center;
+  padding: 25px 15px;
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ تحسين صورة الكارت */
+.card img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  margin-right: 30px;
+  border-radius: 10px;
+  box-shadow: 0 60px 40px rgba(0, 0, 0, 0.08);
+  transition: border-radius 0.3s;
+}
+
+.card h2 {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.card p {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.5;
+  max-width: 350px;
+}
+
+/* ✅ تحسين الأزرار */
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.socials > button {
+  border: none;
+  background: transparent;
+  color: #f8f8f8;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.socials > button:hover {
+  transform: scale(1.1);
+}
+
+.socials > button i {
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #3f3b39;
+  border: 4px solid var(--card);
+}
+
+/* ✅ تحسين التصميم للهواتف */
+@media (max-width: 880px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .card img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+}
+
+/* ✅ تحسين التصميم للشاشات الصغيرة جدًا */
+@media (max-width: 590px) {
+  .card img {
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    box-shadow: none;
+    margin-bottom: 20px;
+    padding: 0px;
+  }
+}
